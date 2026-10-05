@@ -1,0 +1,198 @@
+body{
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    color: purple;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+}
+
+button{
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+}
+
+h2{
+    color: #4B0082;
+}
+
+p{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button:hover{
+    background-color: #6a0dad;
+    cursor: pointer;
+}
+
+ul{
+    font-size: 18px;
+}
+
+hr{
+    border: 1px solid #ddd;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+body{
+    margin:20px;
+    font-family: Arial, sans-serif;
+}
+
+button{
+    padding:12px 25px;
+}
+
+h3{
+    margin-top: 10px;
+}
+
+button{
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #6a0dad;
+}
+
+img{
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #4B0082;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #6a0dad;
+}
+
+footer{
+    background-color: #4B0082;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+strong{
+    color: #4B0082;
+}
+
+nav{
+    background-color: #4B0082;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: #FFD700;
+}
+
+.product{
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product button{
+    margin-top: 10px;
+}
+
+.products{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+form{
+    width:350px;
+    margin:auto;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background-color:#f9f9f9;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background-color:#4B0082;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:#6a0dad;
+}
+
+h2{
+    text-align:center;
+}
+
+p{
+    text-align:center;
+}

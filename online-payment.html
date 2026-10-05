@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Payment - StyleHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>StyleHub - Online Payment</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="women.html">Women</a>
+    <a href="men.html">Men</a>
+    <a href="beauty.html">Beauty</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+</nav>
+
+<h2>Online Payment</h2>
+
+<p><strong>Payment Mode:</strong> Test Mode</p>
+
+<p><strong>Order ID:</strong> <span id="orderId"></span></p>
+
+<p><strong>Amount:</strong> &#8377;<span id="amount"></span></p>
+
+<hr>
+
+<h3>Test Payment</h3>
+
+<p>
+    This is a test payment page for the StyleHub college project.
+    No real money will be charged.
+</p>
+
+<button onclick="makePayment()">Pay Now</button>
+
+<br><br>
+
+<a href="index.html">
+    <button>Cancel</button>
+</a>
+
+<footer>
+    © 2026 StyleHub. All Rights Reserved.
+</footer>
+
+<script>
+
+let params = new URLSearchParams(window.location.search);
+
+let orderId = params.get("order_id");
+
+let amount = params.get("amount");
+
+document.getElementById("orderId").innerText = orderId;
+
+document.getElementById("amount").innerText = amount;
+
+
+function makePayment() {
+
+    window.location.href =
+        "payment-success.php?order_id=" +
+        encodeURIComponent(orderId);
+
+}
+
+</script>
+
+</body>
+
+</html>

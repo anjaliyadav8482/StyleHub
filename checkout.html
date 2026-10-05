@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - StyleHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Checkout</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="women.html">Women</a>
+    <a href="men.html">Men</a>
+    <a href="beauty.html">Beauty</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<h2>Order Summary</h2>
+
+<p><strong>Product:</strong> <span id="showProduct"></span></p>
+
+<p><strong>Quantity:</strong> <span id="showQuantity"></span></p>
+
+<p><strong>Total:</strong> &#8377;<span id="showTotal"></span></p>
+
+<hr>
+
+<h2>Delivery Details</h2>
+
+<form action="place_order.php" method="post">
+
+    <input type="hidden" name="product" id="product">
+    <input type="hidden" name="quantity" id="quantity">
+    <input type="hidden" name="total" id="total">
+
+    <input type="text" name="fullname" placeholder="Full Name" required>
+    <br><br>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+    <br><br>
+
+    <input type="tel" name="mobile" placeholder="Mobile Number" required>
+    <br><br>
+
+    <textarea name="address" placeholder="Delivery Address" rows="4" cols="40" required></textarea>
+    <br><br>
+
+    <h3>Payment Method</h3>
+
+    <input type="radio" name="payment" value="COD" checked>
+    Cash on Delivery
+
+    <br><br>
+
+    <input type="radio" name="payment" value="Online">
+    Online Payment (Test Mode)
+
+    <br><br>
+
+    <button type="submit">Place Order</button>
+
+</form>
+
+<footer>
+    © 2026 StyleHub. All Rights Reserved.
+</footer>
+
+<script>
+
+let params = new URLSearchParams(window.location.search);
+
+let product = params.get("product") || "StyleHub Product";
+
+let price = parseInt(params.get("price")) || 0;
+
+let quantity = parseInt(params.get("quantity")) || 1;
+
+let total = price * quantity;
+
+document.getElementById("showProduct").innerText = product;
+
+document.getElementById("showQuantity").innerText = quantity;
+
+document.getElementById("showTotal").innerText = total;
+
+document.getElementById("product").value = product;
+
+document.getElementById("quantity").value = quantity;
+
+document.getElementById("total").value = total;
+
+</script>
+
+</body>
+</html>

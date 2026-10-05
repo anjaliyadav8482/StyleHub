@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StyleHub</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<h1>StyleHub</h1>
+
+<nav>
+
+<a href="index.html">Home</a> 
+<a href="women.html">Women</a> 
+<a href="men.html">Men</a> 
+<a href="beauty.html">Beauty</a> 
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+<a href="profile.php">Profile</a>
+<a href="cart.html">Cart</a>
+
+<form onsubmit="searchProduct(); return false;">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <button type="submit">Search</button>
+</form>
+</nav>
+
+<h2>Discover your Style</h2>
+
+<img class="banner" src="banner.jpg" alt="Fashion Banner">
+
+<p>
+    Welcome to StyleHub! Explore the latest fashion trends,beauty products,and stylish collections at affordable prices.
+ </p>
+
+<a href="women.html"><button>Shop Now</button></a>
+<a href="beauty.html"><button>Explore Collection</button></a>
+
+<br><br>
+
+<h2>Featured categories</h2>
+
+<ul>
+    <li>Women's Fashion</li>
+    <li>Men's Fashion</li>
+    <li>Beauty Products</li>
+    <li>Accessories</li>
+</ul>
+<h2>Featured Products</h2>
+
+<div class="product">
+
+<img src="tshirt.jpg" alt="Casual T-shirt">
+<h3>Casual T-shirts</h3>
+<p>Price: &#8377;799</p>
+<a href="cart.html?product=Casual%20T-Shirt&price=799">
+    <button>Buy Now</button>
+</a>
+</div>
+
+<hr>
+
+<div class="product">
+
+<img src="jeans.jpg" alt="Stylish Jeans">
+<h3>Stylish Jeans</h3>
+<p>Price: &#8377;1,299</p>
+<a href="cart.html?product=Stylish%20Jeans&price=1299">
+    <button>Buy Now</button>
+</a>
+</div>
+
+<hr>
+
+<div class="product">
+
+<img src="skincare.jpg" alt="Skin Care Kit">
+<h3>Skin Care Kit</h3>
+<p>Price: &#8377;999</p>
+<a href="cart.html?product=Skin%20Care%20Kit&price=999">
+    <button>Buy Now</button>
+</a>
+</div>
+<hr>
+
+<h2>About us</h2>
+ 
+<p>
+    StyleHub is your one-step destination for faishon and beauty.
+    we provide trendy clothing,accessories,and beauty products at
+    affordable prices.
+</p>
+
+<hr>
+
+<h2>Contact Us</h2>
+
+<P><strong>Email:</strong> stylehub@gmail.com</P>
+<p><strong>Phone:</strong> +918482865176</p>
+<p><strong>Address:</strong> Mumbai, India</p>
+
+<footer>
+    <p>© 2026 StyleHub. All Rights Reserved.</p>
+</footer>
+
+<script>
+function searchProduct() {
+
+    let search = document.getElementById("searchInput").value.trim().toLowerCase();
+
+    if (search === "") {
+        alert("Please enter a product name.");
+        return;
+    }
+
+    if (
+        search.includes("tshirt") ||
+        search.includes("t-shirt") ||
+        search.includes("casual t-shirt")
+    ) {
+        window.location.href = "women.html";
+    }
+    else if (
+        search.includes("jeans") ||
+        search.includes("stylish jeans") ||
+        search.includes("blue jeans")
+    ) {
+        window.location.href = "men.html";
+    }
+    else if (
+        search.includes("skin") ||
+        search.includes("skincare") ||
+        search.includes("skin care") ||
+        search.includes("beauty")
+    ) {
+        window.location.href = "beauty.html";
+    }
+    else {
+        alert("Product not found.");
+    }
+}
+</script>
+
+</body>
+</html>

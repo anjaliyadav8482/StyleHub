@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart - StyleHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Shopping Cart</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="women.html">Women</a>
+    <a href="men.html">Men</a>
+    <a href="beauty.html">Beauty</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<h2>Your Cart</h2>
+
+<div class="cart-item">
+
+    <h3 id="productName"></h3>
+
+    <p>Price: <span id="productPrice"></span></p>
+
+    <button onclick="decreaseQuantity()">-</button>
+
+    <span id="quantity">1</span>
+
+    <button onclick="increaseQuantity()">+</button>
+
+    <button onclick="removeItem()">Remove</button>
+
+</div>
+
+<hr>
+
+<h2 id="cartTotal">Total: <span id="total">₹ 0</span></h2>
+
+
+<a id="checkoutLink" href="#">
+    <button>Proceed to Checkout</button>
+</a>
+
+<a href="index.html">
+    <button>Continue Shopping</button>
+</a>
+
+<footer>
+&copy; 2026 StyleHub. All Rights Reserved.
+</footer>
+
+<script>
+
+let params = new URLSearchParams(window.location.search);
+
+let product = params.get("product");
+let price = parseInt(params.get("price"));
+
+/* If no product is selected */
+if (!product || isNaN(price)) {
+    product = "No Product Selected";
+    price = 0;
+}
+
+/* Display product */
+document.getElementById("productName").innerText = product;
+document.getElementById("productPrice").innerText = "₹ " + price;
+
+/* Update total */
+function updateTotal() {
+
+    let quantity = parseInt(
+        document.getElementById("quantity").innerText
+    );
+
+    let total = price * quantity;
+
+    document.getElementById("total").innerText = "₹ " + total;
+
+    updateCheckoutLink();
+}
+
+/* Increase quantity */
+function increaseQuantity() {
+
+    let quantity = document.getElementById("quantity");
+
+    quantity.innerText =
+        parseInt(quantity.innerText) + 1;
+
+    updateTotal();
+}
+
+/* Decrease quantity */
+function decreaseQuantity() {
+
+    let quantity = document.getElementById("quantity");
+
+    let currentQuantity =
+        parseInt(quantity.innerText);
+
+    if (currentQuantity > 1) {
+
+        currentQuantity--;
+
+        quantity.innerText = currentQuantity;
+
+        updateTotal();
+    }
+}
+
+/* Update checkout link */
+function updateCheckoutLink() {
+
+    let quantity =
+        document.getElementById("quantity").innerText;
+
+    document.getElementById("checkoutLink").href =
+        "checkout.html?product=" +
+        encodeURIComponent(product) +
+        "&price=" +
+        price +
+        "&quantity=" +
+        quantity;
+}
+
+/* Remove product */
+function removeItem() {
+
+    document.querySelector(".cart-item").style.display = "none";
+
+    document.getElementById("total").innerText = "₹ 0";
+
+    document.getElementById("cartTotal").innerText = "Total: ₹ 0";
+
+    document.getElementById("checkoutLink").style.display = "none";
+}
+/* Run when page opens */
+updateTotal();
+
+</script>
+
+</body>
+</html>
